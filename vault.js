@@ -8,28 +8,39 @@ function vaultGenerator() {
       return obj;
   }
   function getValue(key){
-    if(obj[key]){
+    //if no key is used, return null
+    if(!key){
+      return null;
+    //setting my value from setValue function to null
+    } else if (obj[key] === undefined) {
+      return null;
+    } else {
+      //if those don't apply return value
+      return obj[key];
+    }
+/*  if(obj[key]){
       return obj[key];
     } else {
       return null;
-    }
-    /*if(!key){
-
-      return null;
-    } else if(key !== obj[key]){
-        console.log("hi");
-      return null;
-
-    } else if( key === obj.[key]);
-
-      return obj[key];
     }*/
+
  }
   return{
     getValue : getValue,
     setValue : setValue
   };
 }
+
+/*Did not understand why this worked, can I get an explanation?
+Willing to redo all of this to get a better understanding
+or find out better ways to solve this*/
+
+
+
+
+
+
+
 
 module.exports = vaultGenerator;
 var vault = vaultGenerator();
