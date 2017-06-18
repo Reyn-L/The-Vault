@@ -1,22 +1,32 @@
 /*jshint esversion: 6 */
 'use strict';
 function vaultGenerator() {
-   var test = {};
+   let obj = {};
   function setValue(key, value){
 
-      //test[key]= value;
-      //return test;
+      obj[key]= value;
+      return obj;
   }
   function getValue(key){
-    if(!key){
-      return null;
-    } else if( key !== test.key){
+    if(obj[key]){
+      return obj[key];
+    } else {
       return null;
     }
+    /*if(!key){
 
-  }
+      return null;
+    } else if(key !== obj[key]){
+        console.log("hi");
+      return null;
+
+    } else if( key === obj.[key]);
+
+      return obj[key];
+    }*/
+ }
   return{
-    getValue: getValue,
+    getValue : getValue,
     setValue : setValue
   };
 }
